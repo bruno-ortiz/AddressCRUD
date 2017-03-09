@@ -1,0 +1,84 @@
+{
+	"variables": [],
+	"info": {
+		"name": "Address Crud",
+		"_postman_id": "907a06f9-6a36-87d0-1a26-e1cb9481619b",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Find By CEP",
+			"request": {
+				"url": "http://localhost:8080/address/01234570",
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Find by ID",
+			"request": {
+				"url": "http://localhost:8080/address/id/4478437a-3fef-4440-a992-cc03afb0b4b8",
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Insert new Address",
+			"request": {
+				"url": "http://localhost:8080/address",
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"street\": \"Av. Liberdade\",\n  \"number\": 257,\n  \"cep\": \"01234570\",\n  \"neighborhood\": \"Vergueiro\",\n  \"city\": \"São Paulo\",\n  \"uf\": \"SP\",\n  \"complement\": \"Apto 34\"\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Update address",
+			"request": {
+				"url": "http://localhost:8080/address",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"addressID\": \"4ac3b5d4-a2ad-4262-8091-d6bb00dcd450\",\n\t\"address\":{\n\t\t\"street\": \"Av. Liberdade\",\n\t\t\"number\": 267,\n\t\t\"cep\": \"01234570\",\n\t\t\"neighborhood\": \"Vergueiro\",\n\t\t\"city\": \"São Paulo\",\n\t\t\"uf\": \"SP\",\n\t\t\"complement\": \"Apto 34\"\n\t}\n\t\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Delete by ID",
+			"request": {
+				"url": "http://localhost:8080/address/id/4ac3b5d4-a2ad-4262-8091-d6bb00dcd450",
+				"method": "DELETE",
+				"header": [],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		}
+	]
+}

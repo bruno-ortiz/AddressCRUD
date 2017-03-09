@@ -1,0 +1,6 @@
+rootProject.name = 'AddressCRUD'
+include 'web'
+include 'usecases'
+include 'persistence'
+include 'api'
+

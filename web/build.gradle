@@ -1,0 +1,29 @@
+apply plugin: 'application'
+
+mainClassName = "br.com.guiabolso.CurupiraApplication"
+
+applicationDefaultJvmArgs = [
+        "-server",
+        "-XX:+UseNUMA",
+        "-XX:+UseParallelGC",
+        "-Xms128m",
+        "-Xmx256m"
+]
+
+
+dependencies {
+    compile project(':usecases')
+    compile project(':persistence')
+    compile('com.sparkjava:spark-core:2.5.5') {
+        exclude group: 'org.slf4j', module: 'slf4j-simple'
+    }
+    compile 'com.google.code.gson:gson:2.6.2'
+
+    testCompile 'io.rest-assured:rest-assured:3.0.0'
+}
+
+jar {
+    manifest {
+        attributes 'Implementation-Title': 'AddressCrud', 'Implementation-Version': version
+    }
+}
